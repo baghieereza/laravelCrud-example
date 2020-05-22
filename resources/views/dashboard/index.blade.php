@@ -10,7 +10,7 @@
                 <div class="card card-primary large">
                     <a href="{{route('add_new_document')}}" class="d-block text-center">
                         <i class="fal fa-plus"></i>
-                        <div>افزودن </div>
+                        <div>new</div>
                     </a>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 <div class="card card-secondary large">
                     <a href="{{route('show_documents')}}" class="d-block text-center">
                         <i class="fal fa-eye"></i>
-                        <div>نمایش </div>
+                        <div>read</div>
                     </a>
                 </div>
             </div>
@@ -30,11 +30,11 @@
                         <div class="card-icon card-icon-warning">
                             <i class="fal fa-tasks"></i>
                         </div>
-                        <h3 class="card-title">12</h3>
+                        <h3 class="card-title">@php echo count($data) @endphp</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            لورم ایپسوم متن ساختگی
+                            all new doc
                         </div>
                     </div>
                 </div>
@@ -45,11 +45,11 @@
                         <div class="card-icon card-icon-success">
                             <i class="fal fa-eye"></i>
                         </div>
-                        <h3 class="card-title">750</h3>
+                        <h3 class="card-title">100</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            لورم ایپسوم متن ساختگی
+                            gallery count
                         </div>
                     </div>
                 </div>
@@ -60,11 +60,11 @@
                         <div class="card-icon card-icon-danger">
                             <i class="fal fa-copy"></i>
                         </div>
-                        <h3 class="card-title">8</h3>
+                        <h3 class="card-title">@php echo count($data) @endphp</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            لورم ایپسوم متن ساختگی
+                            all doc
                         </div>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <div class="card-icon card-icon-info">
-                            <i class="fal fa-dollar-sign"></i>
+                            <i class="fal fa-copy"></i>
                         </div>
                         <h3 class="card-title">1500</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            لورم ایپسوم متن ساختگی
+                            new image
                         </div>
                     </div>
                 </div>

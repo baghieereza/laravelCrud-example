@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <main id="main" class="bg-image main">
+    <main id="main" class="bg-image main" >
         <!-- Main Content -->
         <div class="container-fluid pt-4">
 
@@ -38,16 +38,18 @@
                         <div class="card-body">
                             <div class="d-flex ">
                                 <h1 class="mb-3 title">{{$data->subject}}</h1>
-                                <button data-remodal-target="modal"
+                                <a id="editModal"  data-remodal-target="modal" data-id="{{$data->id}}" data-subject="{{$data->subject}}"
+                                        data-number="{{$data->number}}" data-docdate="{{$data->date}}"
+                                        data-exporter="{{$data->exporterReference}}" data-page="{{$data->pageCount}}"
                                         class="btn btn-outline btn-outline-primary mr-auto d-block">
                                     <i class="fal fa-edit v-middle"></i>
-                                    ویرایش
-                                </button>
+                                    edit
+                                </a>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <h3>شماره سند</h3>
+                                    <h3>number :</h3>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{$data->number}}</p>
@@ -55,7 +57,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <h3>تاریخ سند</h3>
+                                    <h3>date :</h3>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{$data->date}}</p>
@@ -63,7 +65,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <h3>مرجع صادر کننده</h3>
+                                    <h3>exporterReference :</h3>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{$data->exporterReference}}</p>
@@ -71,7 +73,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <h3>تعداد برگ</h3>
+                                    <h3>pages :</h3>
                                 </div>
                                 <div class="col-md-6">
                                     <p>{{$data->pageCount}}</p>
@@ -88,10 +90,28 @@
 
         </div>
 
-        <a style="margin-right: 50% ; margin-bottom: 50px;width: 150px" href="{{route('show_documents')}}" class="explanation btn btn-danger"   >بازگشت</a>
+        <a style="margin-right: 50% ; margin-bottom: 50px;width: 150px" href="{{route('show_documents')}}" class="explanation btn btn-danger" >back</a>
 
 
 
         <!-- /End Main Content -->
     </main>
+
+    @include('read.single.modal')
+@endsection
+@section('script')
+
+    <script>
+        $("#editModal").click(function (e) {
+
+            console.log($(this).data('subject'))
+            $("#subject").val($(this).data('subject'));
+            $("#edit_id").val($(this).data('id'));
+            $("#number").val($(this).data('number'));
+            $("#docdate").val($(this).data('docdate'));
+            $("#exporterReference").val($(this).data('exporter'));
+            $("#pageCount").val($(this).data('page'));
+        })
+
+    </script>
 @endsection

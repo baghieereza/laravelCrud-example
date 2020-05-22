@@ -6,42 +6,45 @@
     <button data-remodal-action="close" class="remodal-close"></button>
     <h3 class="mb-3">ویرایش</h3>
 
-    <form>
+    <form action="{{route('updateDoc')}}" method="post">
+        {{csrf_field()}}
+        <input  type="hidden" id="edit_id" name="id">
+
         <div class="text-right">
             <div class="form-group">
                 <label>
                     عنوان سند
                 </label>
-                <input class="form-control" type="text" name="a">
+                <input    class="form-control" type="text" id="subject" name="subject">
             </div>
             <div class="form-group">
                 <label>
                     شماره سند
                 </label>
-                <input class="form-control" type="number" name="b">
+                <input class="form-control" type="number" id="number" name="number">
             </div>
             <div class="form-group">
                 <label>
                     تاریخ سند
                 </label>
-                <input class="form-control" type="text" name="c">
+                <input class="form-control" type="text" id="docdate" name="date">
             </div>
             <div class="form-group">
                 <label>
                     مرجع صادر کننده
                 </label>
-                <input class="form-control" type="text" name="d">
+                <input class="form-control" type="text" id="exporterReference" name="exporterReference">
             </div>
             <div class="form-group">
                 <label>
                     تعداد برگ
                 </label>
-                <input class="form-control" type="text" name="e">
+                <input class="form-control" type="text" id="pageCount" name="pageCount">
             </div>
         </div>
 
         <div class="btn-container">
-            <button class="btn btn-primary btn-block" data-remodal-action="confirm">تایید</button>
+            <input type="submit" class="btn btn-primary btn-block"   value="تایید">
         </div>
     </form>
 </div>

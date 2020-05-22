@@ -1,6 +1,6 @@
 <footer id="footer">
     <div class="bottom_footer text-center">
-        <p class=""> &#169; تمامی حقوق متعلق به تیپ 21 امام رضا (ع)  میباشد . </p>
+        <p class=""> &#169; copyright © 2020 all rights reserved </p>
     </div>
 </footer>
 
@@ -18,6 +18,7 @@
 <!-- JS files -->
 <script src="{{asset('web/lib/lightgallery/lightgallery-all.min.js')}}"></script>
 <script src="{{asset('web/lib/modal/remodal.min.js')}}"></script>
+<script src="{{asset('web/lib/notify.min.js')}}"></script>
 
 <script type="text/javascript">
     $('#aniimated-thumbnials').lightGallery({

@@ -5,11 +5,12 @@
     <main id="main" class="bg-image main">
         <!-- Main Content -->
         <div class="container-fluid pt-4">
-            <form>
+            <form method="post" action="{{route('search')}}">
+                {{csrf_field()}}
                 <div class="row  justify-content-center mb-2">
                     <div class="col-lg-4 form-group">
                         <div class="form-group mb-0">
-                            <input type="text" name="tableSearch" class="form-control" placeholder="جستجو">
+                            <input type="text" name="subject" class="form-control" placeholder="search">
                             <button class="btn btn-primary btn-input">
                                 <i class="fal fa-search"></i>
                             </button>

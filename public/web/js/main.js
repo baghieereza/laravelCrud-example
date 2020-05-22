@@ -3,8 +3,8 @@
 $(document).ready(function() {
 
 // datepicker1 =============================================== err !!!
-  if($("#datepicker0,#datepicker1,#datepicker2,#datepicker3,#datepicker4").length>0){
-        $("#datepicker0,#datepicker1,#datepicker2,#datepicker3,#datepicker4").datepicker({
+  if($("#datepicker0,#datepicker10,#datepicker2,#datepicker3,#datepicker4").length>0){
+        $("#datepicker0,#datepicker10,#datepicker2,#datepicker3,#datepicker4").datepicker({
             // minDate: 0,
             isRTL: true,
             dateFormat: "yy/mm/dd"

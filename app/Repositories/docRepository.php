@@ -69,7 +69,7 @@ class docRepository implements docRepositoryInterface
      */
     public function search($subject)
     {
-        return Docs::where('subject',$subject)->get();
+        return Docs::where('subject','like', '%' . $subject . '%')->get();
     }
 
     /**

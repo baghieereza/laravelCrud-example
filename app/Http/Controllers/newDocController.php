@@ -39,7 +39,7 @@ class newDocController extends Controller
     public function create(DocRequest $request)
     {
         $this->doc->create($request);
-        return view('dashboard.index');
+        return redirect()->route('home');
     }
 
 
