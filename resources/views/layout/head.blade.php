@@ -2,6 +2,7 @@
     <title>ثبت اسناد</title>
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('web/img/logo.png')}}">
     <meta charset="utf-8">
+    <meta name="token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset('web/css/grid.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('web/fonts/fontawesome/css/all.css')}}">

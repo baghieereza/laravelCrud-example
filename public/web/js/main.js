@@ -7,7 +7,7 @@ $(document).ready(function() {
         $("#datepicker0,#datepicker1,#datepicker2,#datepicker3,#datepicker4").datepicker({
             // minDate: 0,
             isRTL: true,
-            dateFormat: "yy/m/d"
+            dateFormat: "yy/mm/dd"
         });
   }
 

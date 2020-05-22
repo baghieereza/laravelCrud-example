@@ -8,7 +8,7 @@ interface docRepositoryInterface
      *
      * @param int
      */
-    public function get($post_id);
+    public function get($doc_id);
 
     /**
      * Get's all posts.

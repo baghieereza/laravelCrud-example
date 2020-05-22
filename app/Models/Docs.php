@@ -18,7 +18,7 @@ class Docs extends Eloquent
      * @var array
      */
     protected $fillable = [
-        'id', 'subject', 'Date','exporterReference','pageCount','created_at','updated_at',
+        'id','number', 'subject', 'date','exporterReference','pageCount','created_at','updated_at',
     ];
 
 
@@ -27,7 +27,7 @@ class Docs extends Eloquent
      */
     public function gallery()
     {
-        return $this->hasMany('gallery', 'doc_id', 'id');
+        return $this->hasMany('App\Models\Gallery', 'doc_id', 'id');
     }
 
 

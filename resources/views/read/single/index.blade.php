@@ -11,17 +11,23 @@
                     <div class="card card-stats">
                         <div class="card-body">
                             <div class="lightGallery" id="aniimated-thumbnials">
-                                <a href="img/1.jpg" class="d-block bg-cover-style"
-                                   style="background-image: url('img/1.jpg')">
-                                    <img src="img/1.jpg" style="width: 100%; display: none;"/>
-                                    <!--   <=======(it's thumbnial)  -->
-                                </a>
-                                <a href="img/1.jpg">
-                                    <img src="img/1.jpg"/>
-                                </a>
-                                <a href="img/1.jpg">
-                                    <img src="img/1.jpg"/>
-                                </a>
+
+
+                                @php $i=0; @endphp
+                                @foreach($data->gallery as $gallery)
+                                    @if($i == 0 )
+                                        <a href="{{$gallery->link}}" class="d-block bg-cover-style"
+                                           style="background-image: url('{{$gallery->link}}')">
+                                            <img src="{{$gallery->link}}" style="width: 100%; display: none;"/>
+                                        </a>
+                                    @endif
+                                         <a href="{{$gallery->link}}">
+                                           <img src="{{$gallery->link}}"/>
+                                         </a>
+                                        @php ++$i; @endphp
+
+                                @endforeach
+
                             </div>
                         </div>
                     </div>
@@ -31,7 +37,7 @@
                     <div class="card card-stats tb">
                         <div class="card-body">
                             <div class="d-flex ">
-                                <h1 class="mb-3 title">لورم ایپسوم متن ساختگی</h1>
+                                <h1 class="mb-3 title">{{$data->subject}}</h1>
                                 <button data-remodal-target="modal"
                                         class="btn btn-outline btn-outline-primary mr-auto d-block">
                                     <i class="fal fa-edit v-middle"></i>
@@ -44,7 +50,7 @@
                                     <h3>شماره سند</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>شماره سند</p>
+                                    <p>{{$data->number}}</p>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -52,7 +58,7 @@
                                     <h3>تاریخ سند</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>تاریخ سند</p>
+                                    <p>{{$data->date}}</p>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -60,7 +66,7 @@
                                     <h3>مرجع صادر کننده</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>مرجع صادر کننده</p>
+                                    <p>{{$data->exporterReference}}</p>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -68,24 +74,24 @@
                                     <h3>تعداد برگ</h3>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>تعداد برگ</p>
+                                    <p>{{$data->pageCount}}</p>
                                 </div>
                             </div>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
-                                فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
-                                زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
-                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو
-                                در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
-                                راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و
-                                جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                            </p>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+        <a style="margin-right: 50% ; margin-bottom: 50px;width: 150px" href="{{route('show_documents')}}" class="explanation btn btn-danger"   >بازگشت</a>
+
+
+
         <!-- /End Main Content -->
     </main>
 @endsection

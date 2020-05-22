@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Docs;
+use App\Models\Gallery;
 
 /**
  * Class docRepository
@@ -21,7 +22,7 @@ class docRepository implements docRepositoryInterface
      */
     public function get($doc_id)
     {
-       return Docs::where('id',$doc_id)->first();
+       return Docs::with('gallery')->where('id',$doc_id)->first();
     }
 
     /**
@@ -31,7 +32,7 @@ class docRepository implements docRepositoryInterface
      */
     public function all()
     {
-        return Docs::get();
+        return Docs::with('gallery')->get();
     }
 
     /**
@@ -78,6 +79,22 @@ class docRepository implements docRepositoryInterface
      */
     public function create($data)
     {
-        return Docs::firstOrCreate(array('subject' => $data['subject'] , 'Number' => $data['Number'] , 'Number' => $data['Number'] , 'exporterReference' => $data['exporterReference'] , 'pageCount' => $data['pageCount'] , ));
+        $doc =  Docs::firstOrCreate(array('subject' => $data['subject'] , 'number' => $data['number'] , 'date' => $data['date'] , 'exporterReference' => $data['exporterReference'] , 'pageCount' => $data['pageCount'] , ));
+        return $this->saveGallery($doc->id);
+    }
+
+
+    /**
+     * @param $doc_id
+     *
+     * @return bool
+     */
+    public function saveGallery($doc_id)
+    {
+        $gallery = session()->get('pics');
+        foreach ($gallery as $item){
+            Gallery::firstOrCreate(array('link' => asset('uploads/'.$item) , 'doc_id'=>$doc_id));
+        }
+        return true;
     }
 }

@@ -114,7 +114,7 @@
     Dropzone.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "addedfile", "addedfiles", "removedfile", "thumbnail", "error", "errormultiple", "processing", "processingmultiple", "uploadprogress", "totaluploadprogress", "sending", "sendingmultiple", "success", "successmultiple", "canceled", "canceledmultiple", "complete", "completemultiple", "reset", "maxfilesexceeded", "maxfilesreached", "queuecomplete"];
 
     Dropzone.prototype.defaultOptions = {
-      url: null,
+      url: 'upload_pic',
       method: "post",
       withCredentials: false,
       parallelUploads: 2,
@@ -150,6 +150,9 @@
       dictRemoveFile: "Remove file",
       dictRemoveFileConfirmation: null,
       dictMaxFilesExceeded: "You can not upload any more files.",
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+      },
       accept: function(file, done) {
         return done();
       },
